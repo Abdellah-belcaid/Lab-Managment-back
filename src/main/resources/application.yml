@@ -1,0 +1,64 @@
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+
+# Database configuration
+  datasource:
+    url: jdbc:${DB_TYPE}://${DB_HOST}:${DB_PORT}/${DB_NAME}  # Database connection URL
+    username: ${DB_USERNAME}  # Database username
+    password: ${DB_PASSWORD}  # Database password
+    driver-class-name: ${DB_DRIVER}  # Database driver class
+
+# JPA properties
+  jpa:
+    properties:
+      hibernate:
+        dialect: ${DB_DIALECT}  # Database dialect based on selected database
+    show-sql: true  # Display SQL queries in console
+    hibernate:
+      ddl-auto: update  # Update the database schema automatically
+
+# Mail configuration
+
+  mail:
+    host: smtp.gmail.com  # SMTP server host
+    port: 587  # SMTP server port
+    username: ${MAIL_USERNAME}  # Email account username
+    password: ${MAIL_PASSWORD}  # Email account password
+    default-encoding: UTF-8  # Default character encoding for emails
+    properties:
+      mail:
+        mime:
+          charset: UTF  # Character encoding for MIME messages
+        smtp:
+          writetimeout: 10000  # Write timeout for the SMTP connection
+          connectiontimeout: 10000  # Connection timeout for the SMTP connection
+          timeout: 10000  # Timeout for the SMTP connection
+          auth: true  # Enable SMTP authentication
+          starttls:
+            enable: true  # Enable STARTTLS for secure connection
+            required: true  # Require STARTTLS for secure connection
+    verify:
+      host: http://localhost:8080
+
+
+# JWT token properties for authentication and authorization
+app:
+  jwt:
+    secret: ${JWT_SECRET}  # Secret key for signing JWT tokens
+    expiration-in-ms:  ${JWT_EXPIRATION_MS}   # Expiration time for JWT tokens in milliseconds (24 hours)
+
+    # Internal API key for authentication purposes
+  authentication:
+    internal-api-key: ${INTERNAL_API_KEY}
+
+#server
+server:
+  port: ${SERVER_PORT}
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include=*:
