@@ -4,9 +4,9 @@
 DB_TYPE: postgresql       # Database type
 DB_USERNAME: belcaid      # Database username
 DB_PASSWORD: belcaid2001  # Database password
-DB_HOST: localhost        # Database host
+DB_HOST: postgres        # Database host
 DB_PORT: 5432             # Database port
-DB_NAME: Lab-Management   # Database name
+DB_NAME: Lab   # Database name
 DB_DRIVER: org.postgresql.Driver  # Database driver class
 DB_DIALECT: org.hibernate.dialect.PostgreSQLDialect  # Hibernate dialect for PostgreSQL
 

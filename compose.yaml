@@ -7,11 +7,20 @@ services:
       - 'POSTGRES_USER=belcaid'
     ports:
       - '5432:5432'
-    networks:
-      - 'spring-cloud-network'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
 
-networks:
-  spring-cloud-network:
-    driver: bridge
+app:
+  build: .
+  ports:
+    - "8080:8080"
+  depends_on:
+    - postgres
+  environment:
+    SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/lab
+    SPRING_DATASOURCE_USERNAME: belcaid
+    SPRING_DATASOURCE_PASSWORD: belcaid2001
 
+volumes:
+  postgres-data:
 
