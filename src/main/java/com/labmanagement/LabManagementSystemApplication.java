@@ -32,15 +32,14 @@ public class LabManagementSystemApplication {
 
 
     @Bean
-    CommandLineRunner commandLineRunner(UserRepository userRepository, PasswordEncoder passwordEncoder , JdbcConnectionDetails jdbcConnectionDetails) {
+    CommandLineRunner commandLineRunner(UserRepository userRepository, PasswordEncoder passwordEncoder, JdbcConnectionDetails jdbcConnectionDetails) {
 
 
         return args -> {
-            System.out.println("class : "+jdbcConnectionDetails.getClass().getName());
-            System.out.println("URL : "+jdbcConnectionDetails.getJdbcUrl());
-            System.out.println("Password : "+jdbcConnectionDetails.getPassword());
-            System.out.println("Username : "+jdbcConnectionDetails.getUsername());
-
+            System.out.println("class : " + jdbcConnectionDetails.getClass().getName());
+            System.out.println("URL : " + jdbcConnectionDetails.getJdbcUrl());
+            System.out.println("Password : " + jdbcConnectionDetails.getPassword());
+            System.out.println("Username : " + jdbcConnectionDetails.getUsername());
 
             String adminEmail = "belcaid.abdellah2001@gmail.com";
             if (userRepository.findByEmailIgnoreCase(adminEmail) == null) {
