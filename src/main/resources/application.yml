@@ -11,6 +11,7 @@ spring:
 
 # JPA properties
   jpa:
+
     properties:
       hibernate:
         dialect: ${DB_DIALECT}  # Database dialect based on selected database

@@ -1,26 +1,14 @@
 services:
-  postgres:
-    image: 'postgres:latest'
-    environment:
-      - 'POSTGRES_DB=lab'
-      - 'POSTGRES_PASSWORD=belcaid2001'
-      - 'POSTGRES_USER=belcaid'
+  lab-management-system:
+    container_name: lab-management-system-container
+    build:
+      context: .
+      args:
+        CONTAINER_PORT: ${CONTAINER_PORT}
+    image: lab-management-system:v1
+    restart: unless-stopped
+    expose:
+      - ${CONTAINER_PORT}
     ports:
-      - '5432:5432'
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-
-  app:
-    build: .
-    ports:
-      - "8080:8080"
-    depends_on:
-      - postgres
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/lab
-      SPRING_DATASOURCE_USERNAME: belcaid
-      SPRING_DATASOURCE_PASSWORD: belcaid2001
-
-volumes:
-  postgres-data:
+      - ${CONTAINER_PORT}:${HOST_PORT}
 
