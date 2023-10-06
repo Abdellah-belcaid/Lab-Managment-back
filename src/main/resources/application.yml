@@ -4,7 +4,7 @@ spring:
 
 # Database configuration
   datasource:
-    url: jdbc:${DB_TYPE}://dpg-ckemntdtj22c7389q29g-a.oregon-postgres.render.com/lab_tr8y
+    url: jdbc:${DB_TYPE}://${DB_HOST}:${DB_PORT}/${DB_NAME}  # Database connection URL
     username: ${DB_USERNAME}  # Database username
     password: ${DB_PASSWORD}  # Database password
     driver-class-name: ${DB_DRIVER}  # Database driver class

@@ -4,9 +4,9 @@
 DB_TYPE: postgres  # postgresql       # Database type
 DB_USERNAME: belcaid      # Database username
 DB_PASSWORD: DHa7mYfAdl1zxYOyWi7ybQkEx59xegOx  # Database password
-DB_HOST: containers-us-west-170.railway.app        # Database host
-DB_PORT: 7416             #5432             # Database port
-DB_NAME: railway   # Database name
+DB_HOST: dpg-ckemntdtj22c7389q29g-a        # Database host
+DB_PORT: 5432             #5432             # Database port
+DB_NAME: lab_tr8y   # Database name
 DB_DRIVER: org.postgresql.Driver  # Database driver class
 DB_DIALECT: org.hibernate.dialect.PostgreSQLDialect  # Hibernate dialect for PostgreSQL
 
