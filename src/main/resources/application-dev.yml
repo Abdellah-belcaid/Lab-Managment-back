@@ -1,9 +1,9 @@
 # Development Profile Configuration
 
 # Database configuration for PostgreSQL
-DB_TYPE: mysql  # postgresql       # Database type
-DB_USERNAME: root      # Database username
-DB_PASSWORD: qCkf4UKrvQ28z5NqwOZU  # Database password
+DB_TYPE: postgres  # postgresql       # Database type
+DB_USERNAME: belcaid      # Database username
+DB_PASSWORD: DHa7mYfAdl1zxYOyWi7ybQkEx59xegOx  # Database password
 DB_HOST: containers-us-west-170.railway.app        # Database host
 DB_PORT: 7416             #5432             # Database port
 DB_NAME: railway   # Database name
