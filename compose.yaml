@@ -7,6 +7,7 @@ services:
         CONTAINER_PORT: ${CONTAINER_PORT}
     image: lab-management-system:v1
     restart: unless-stopped
+    env_file: .env
     expose:
       - ${CONTAINER_PORT}
     ports:
