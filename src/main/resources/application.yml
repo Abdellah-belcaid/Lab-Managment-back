@@ -9,6 +9,7 @@ spring:
     password: ${DB_PASSWORD}  # Database password
     driver-class-name: ${DB_DRIVER}  # Database driver class
 
+
 # JPA properties
   jpa:
 
