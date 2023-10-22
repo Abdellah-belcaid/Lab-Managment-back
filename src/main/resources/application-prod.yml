@@ -1,0 +1,27 @@
+# Database configuration for PostgreSQL
+DB_TYPE: ${DB_TYPE}
+DB_USERNAME: ${DB_USERNAME}
+DB_PASSWORD: ${DB_PASSWORD}
+DB_HOST: ${DB_HOST}
+DB_PORT: ${DB_PORT}
+DB_NAME: ${DB_NAME}
+DB_DRIVER: ${DB_DRIVER}
+DB_DIALECT: ${DB_DIALECT}
+
+# Server port configuration
+SERVER_PORT: ${SERVER_PORT}
+
+# Active Spring profile (development)
+ACTIVE_PROFILE: ${ACTIVE_PROFILE}
+
+# Mail configuration
+MAIL_USERNAME: ${MAIL_USERNAME}
+MAIL_PASSWORD: ${MAIL_PASSWORD}
+MAIL_VERIFY_HOST: ${MAIL_VERIFY_HOST}
+
+# JWT (JSON Web Token) configuration
+JWT_SECRET: ${JWT_SECRET}
+JWT_EXPIRATION_MS: ${JWT_EXPIRATION_MS}
+
+# Internal API key for authentication purposes
+INTERNAL_API_KEY: ${INTERNAL_API_KEY}
