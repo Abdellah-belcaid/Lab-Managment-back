@@ -1,10 +1,10 @@
 spring:
   profiles:
-    active: ${ACTIVE_PROFILE:prod}
+    active: ${ACTIVE_PROFILE:dev}
 
 # Database configuration
   datasource:
-    url: jdbc:${DB_TYPE}://${DB_HOST}:${DB_PORT}/${DB_NAME}  # Database connection URL
+    url: jdbc:${DB_TYPE}://${DB_HOST}:${DB_PORT}/${DB_NAME}?createDatabaseIfNotExist=true  # Database connection URL
     username: ${DB_USERNAME}  # Database username
     password: ${DB_PASSWORD}  # Database password
     driver-class-name: ${DB_DRIVER}  # Database driver class

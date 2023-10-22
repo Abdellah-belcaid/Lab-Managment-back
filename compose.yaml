@@ -12,4 +12,22 @@ services:
       - ${CONTAINER_PORT}
     ports:
       - ${CONTAINER_PORT}:${HOST_PORT}
+    depends_on:
+      - mysql-db  # This ensures that the MySQL service starts before your app
 
+  mysql-db:
+    container_name: mysql-container
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: "belcaid2001"  # Set root password for MySQL
+      MYSQL_DATABASE: "lab-management"     # Create a specific database (optional)
+      MYSQL_USER: "belcaid"                # Create a specific user (optional)
+      MYSQL_PASSWORD: "belcaid2001"        # Set password for the specified user (optional)
+    ports:
+      - "3306:3306"  # Map MySQL container port to host machine port if needed
+    restart: unless-stopped
+    volumes:
+      - lab-management-system-db:/data/db
+
+volumes:
+  lab-management-system-db:
